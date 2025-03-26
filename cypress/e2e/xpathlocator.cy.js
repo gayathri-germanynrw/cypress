@@ -13,6 +13,4 @@ describe('XpathLocators',()=>{
         cy.visit('https://practice.cydeo.com/')
         cy.xpath("//ul[@class='list-group']").xpath("./li").should('have.length.above',10)
   })
-
-
 })

@@ -15,6 +15,29 @@ describe("Assertions demo", ()=>{
         .and('contain','google')
         .and('not.contain','yahoo')
 
+        // include keyword
+        cy.title().should('include','Goog')
+        .and('eq','Google')
+
+        // Validation on Logo
+        cy.get('.lnXdpd').should('be.visible')
+        .should('exist')
+
+        //No of Links negative test
+       // cy.xpath('//a').should('have.lengthOf.lessThan','50')
+
+          //No of Links
+          cy.xpath('//a').should('have.length','23')
+
+          cy.get('#L2AGLb > .QS5gu').click()
+
+          cy.get('#APjFqb').type('Gayathri') //provide a value into inputbox
+
+       
+
+          cy.get('#APjFqb').should('have.value','Gayathri') // Value check
+
+
     })
 
 })
